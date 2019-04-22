@@ -8,18 +8,18 @@ import (
 
 const (
 	indexName = "book"
-	docType   = "default"
+	docType   = "_doc"
 )
 
 type Book struct {
-  book_name  string  `json:"book_name"`
+  Book_name  string  `json:"book_name"`
 }
 
 // InsertProduct ...
 func InsertProduct(ctx context.Context, elasticClient *elastic.Client) error {
 
     b := Book {
-      book_name : "The GO Programming Language",
+      Book_name : "The GO Programming Language",
     }
 
     _, err := elasticClient.Index().
